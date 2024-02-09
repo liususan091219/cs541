@@ -10,6 +10,11 @@ devExamples = util.readExamples('names.dev')
 def featureExtractor(x):  # phi(x)
     # x = "took Mauritius into"
     phi = defaultdict(float)
+    tokens = x.split()
+    left, entity, right = tokens[0], " ".join(tokens[1:-1]), tokens[-1]
+    phi['entity is ' + entity] = 1
+    phi['left is ' + left] = 1
+    phi['right is ' + right] = 1
     return phi
 
 # Learn a predictor
