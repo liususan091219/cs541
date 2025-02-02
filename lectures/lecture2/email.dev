@@ -1,101 +1,101 @@
-1 +1 resource_handler@res.com
-2 +1 resource_standalone@res.org
-3 +1 multi_feat+abc@feat-domain.com
-4 +1 multi_feat_xyz@feat-domain.org
-5 +1 stable_build99@releases.com
-6 +1 build_engine@releases.org
-7 +1 a1b2c3d4e5@alpha-num.com
-8 +1 a1b2c3d4e6@alpha-num.org
-9 +1 user+alias_909@aliasing.com
-10 +1 alias_test_910@aliasing.org
-11 +1 front_end.dev@frontend.com
-12 +1 front_end_support@frontend.org
-13 +1 special_charsOK@chars.com
-14 +1 char_limited@chars.org
-15 +1 run_time_code@runtime.com
-16 +1 run_time_debug@runtime.org
-17 +1 segmented_name_part@segments.com
-18 +1 segment_parse@segments.org
-19 +1 combine_test+extra@combining.com
-20 +1 combiner_xyz@combining.org
-21 +1 hello_test_888@hello-world.com
-22 +1 hello-world_999@hello-world.org
-23 +1 location_point@maps.com
-24 +1 location_service@maps.org
-25 +1 default_login@defaults.com
-26 +1 default_pass@defaults.org
-27 +1 baseline_user@baselines.com
-28 +1 baseline_team@baselines.org
-29 +1 final_ok_case@theend.com
-30 +1 final_ok_case2@theend.org
-31 +1 last_valid_email@list-end.com
-32 +1 ultimate_address@list-end.org
-33 +1 super_user_test@super-domain.com
-34 +1 super_user_mode@super-domain.org
-35 +1 backoffice_ops@back-office.com
-36 +1 backoffice_ops2@back-office.org
-37 +1 parted.case123@manydots.com
-38 +1 parted_case124@manydots.org
-39 +1 something2025@somethingbig.com
-40 +1 big_thing_user@somethingbig.org
-41 +1 testonly999@devsample.com
-42 +1 dev_sample+tag@devsample.org
-43 +1 random_ok_user@randok.com
-44 +1 random_ok_test@randok.org
-45 +1 minimal_valid123@minval.com
-46 +1 minimal_val_part@minval.org
-47 +1 custom_inbox+tag@custombox.com
-48 +1 custom_service@custombox.org
-49 +1 user987654321@numberslong.com
-50 +1 abcdefghij99@numberslong.org
-51 -1 question@domain.com?extra
-52 -1 domain..double@org
-53 -1 incompleteDomain@dom.
-54 -1 ???symbols???
-55 -1  (lackOfAnything)
-56 -1 xy@z..com
-57 -1 no.comororg
-58 -1 abc@some.net
-59 -1 trailingSpaces   @dom.org
-60 -1 domain_com@domain_com.org
-61 -1 leftover@domain.com extra
-62 -1 doublePeriod..@dom.org
-63 -1 star*char@dom.com
-64 -1 user@some-domain.co
-65 -1 random/char@dom.org
-66 -1 short@c.org
-67 -1 domainEnd@domn.orgstuff
-68 -1 double@@host.com
-69 -1 a@b.com.org
-70 -1 b@sub.domain.gov
-71 -1 space@ domain.com
-72 -1 user@domain.com  extra
-73 -1 fraction!!!!@bad.org
-74 -1 domainIsComButNoAt.com
-75 -1 semicolon;@dom.org
-76 -1 user@domain .com
-77 -1 bigrandomjunk??.org
-78 -1 abc@domain
-79 -1 user@domain.org trailing
-80 -1 manymany@@@signs.com
-81 -1 .@.
-82 -1 !@domain.com
-83 -1 noAlpha%^@dom.org
-84 -1 slashEnding@domain.com/
-85 -1 underscore_name domain@org
-86 -1 open(Paren@dom.com
-87 -1 closeParen)@dom.org
-88 -1 noExtension@dom.
-89 -1 single@char?.org
-90 -1 <tag>@dom.com
-91 -1 user@domain?org
-92 -1 whitespace  
-93 -1 ???@@???
-94 -1 me@domain.org??xx
-95 -1 partial@.org
-96 -1 double  space@dom.com
-97 -1 tabInThe@	end.org
-98 -1 dash@-domain.com
-99 -1 trailingPeriod@domain.com.....
-100 -1 noAtNoPeriod
++1 resource_handler@res.com
++1 resource_standalone@res.org
++1 multi_feat+abc@feat-domain.com
++1 multi_feat_xyz@feat-domain.org
++1 stable_build99@releases.com
++1 build_engine@releases.org
++1 a1b2c3d4e5@alpha-num.com
++1 a1b2c3d4e6@alpha-num.org
++1 user+alias_909@aliasing.com
++1 alias_test_910@aliasing.org
++1 front_end.dev@frontend.com
++1 front_end_support@frontend.org
++1 special_charsOK@chars.com
++1 char_limited@chars.org
++1 run_time_code@runtime.com
++1 run_time_debug@runtime.org
++1 segmented_name_part@segments.com
++1 segment_parse@segments.org
++1 combine_test+extra@combining.com
++1 combiner_xyz@combining.org
++1 hello_test_888@hello-world.com
++1 hello-world_999@hello-world.org
++1 location_point@maps.com
++1 location_service@maps.org
++1 default_login@defaults.com
++1 default_pass@defaults.org
++1 baseline_user@baselines.com
++1 baseline_team@baselines.org
++1 final_ok_case@theend.com
++1 final_ok_case2@theend.org
++1 last_valid_email@list-end.com
++1 ultimate_address@list-end.org
++1 super_user_test@super-domain.com
++1 super_user_mode@super-domain.org
++1 backoffice_ops@back-office.com
++1 backoffice_ops2@back-office.org
++1 parted.case123@manydots.com
++1 parted_case124@manydots.org
++1 something2025@somethingbig.com
++1 big_thing_user@somethingbig.org
++1 testonly999@devsample.com
++1 dev_sample+tag@devsample.org
++1 random_ok_user@randok.com
++1 random_ok_test@randok.org
++1 minimal_valid123@minval.com
++1 minimal_val_part@minval.org
++1 custom_inbox+tag@custombox.com
++1 custom_service@custombox.org
++1 user987654321@numberslong.com
++1 abcdefghij99@numberslong.org
+-1 question@domain.com?extra
+-1 domain..double@org
+-1 incompleteDomain@dom.
+-1 ???symbols???
+-1  (lackOfAnything)
+-1 xy@z..com
+-1 no.comororg
+-1 abc@some.net
+-1 trailingSpaces   @dom.org
+-1 domain_com@domain_com.org
+-1 leftover@domain.com extra
+-1 doublePeriod..@dom.org
+-1 star*char@dom.com
+-1 user@some-domain.co
+-1 random/char@dom.org
+-1 short@c.org
+-1 domainEnd@domn.orgstuff
+-1 double@@host.com
+-1 a@b.com.org
+-1 b@sub.domain.gov
+-1 space@ domain.com
+-1 user@domain.com  extra
+-1 fraction!!!!@bad.org
+-1 domainIsComButNoAt.com
+-1 semicolon;@dom.org
+-1 user@domain .com
+-1 bigrandomjunk??.org
+-1 abc@domain
+-1 user@domain.org trailing
+-1 manymany@@@signs.com
+-1 .@.
+-1 !@domain.com
+-1 noAlpha%^@dom.org
+-1 slashEnding@domain.com/
+-1 underscore_name domain@org
+-1 open(Paren@dom.com
+-1 closeParen)@dom.org
+-1 noExtension@dom.
+-1 single@char?.org
+-1 <tag>@dom.com
+-1 user@domain?org
+-1 whitespace  
+-1 ???@@???
+-1 me@domain.org??xx
+-1 partial@.org
+-1 double  space@dom.com
+-1 tabInThe@	end.org
+-1 dash@-domain.com
+-1 trailingPeriod@domain.com.....
+-1 noAtNoPeriod
 
