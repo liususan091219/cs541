@@ -1,100 +1,101 @@
-1 alice_test+01@mydomain.com
-1 john.doe88@long-subdomain.org
-1 user_name@company-name.com
-1 hello.world2025@sub.company.org
-1 newsletter_signup99@domain.com
-1 account_info2023@mysite.org
-1 contact-me_today@service.com
-1 myemail_test_01@sub.server.org
-1 abc123xy@longdomain.com
-1 smith_jones@dept.company.org
-1 marcus2001@another-domain.com
-1 fred_flintstone@bedrock.org
-1 wilma+rocks@bedrock.com
-1 barney2022@rockcompany.org
-1 betty_rubble@stone.com
-1 pebbles.test@subdomain.org
-1 dino+pet@myrockworld.com
-1 zzz.yyy.xxx@multi-sub.com
-1 localpart_abc@multi-sub.org
-1 team_service@domain-long.com
-1 bigaddress_2024@another.org
-1 join_us-now@my-website.com
-1 newsletter+promo@subsite.org
-1 testdemo555@demo-company.com
-1 user-123@abc-sub.org
-1 check_inbox@domainplus.com
-1 cool-name+tag@domainplus.org
-1 various_chars99@somehost.com
-1 part.test_mail@division.org
-1 personal-2025@bigbigdomain.com
-1 someone_here@mylarge.org
-1 email_alias@megacorp.com
-1 alias+work@megacorp.org
-1 secret_user@subdept.com
-1 random123@subdept.org
-1 charlie.delta@alphabet.com
-1 bravo_alpha@alphabet.org
-1 testing_user+abc@abcabc.com
-1 hash_tag+xyz@some-company.org
-1 under_score@mysub.com
-1 prefix-suffix@mysub.org
-1 longlonglong@longlonglong.com
-1 double.dot@double-dot.org
-1 triple123@sub.somewhere.com
-1 john_x.doe@somewhere.org
-1 subscribe_2021@newsdomain.com
-1 mailrunner@newshub.org
-1 dummy_name99@dummy-domain.com
-1 r2d2.c3po@robotland.org
-1 test_account@train-sample.com
--1 short@x.com
--1 short@org
--1 hello.nodog.com
--1 double@@domain.com
--1 missingat.com
--1 abc@domain.comm
--1 all-symbols!!!
--1 abc@orgg
--1 abc@.com
--1 test@@sub.org
--1 domain.org
--1 two@ats@@some.com
--1 only-dots...
--1 ####@domain.org
--1 endwith_com@domain.com?
--1 space in@domain.com
--1 abc@domain.com org
--1 abc@domaincom
--1 abc_domain.org
--1 myemail@@@domain.org
--1 toolong-suffix@domain.commmmm
--1 missingdot@domainorg
--1 @domain.com
--1 domain.com@
--1 user@domain.co
--1 abc@domain.org??
--1 john@doe .com
--1 ()@domain.org
--1 中文@domain.com
--1 sub..double@domain.com
--1 abc@domaincom.org" 
--1 my email@domain.com
--1 abc@@domain.org
--1 superlong-but-lacks-at-dot
--1 endwith.comm
--1 missingTLD@domain
--1 non-ascii@domäin.org
--1 ++@domain.com
--1 abc@domain.biz
--1 curly{}@dom.com
--1 y@z.com.org
--1 mysite@domain..org
--1 -@domain.com
--1 endsWithSlash@domain.org/
--1 john..doe@domain.com
--1 email@domain.com.
--1    @.org" 
--1 abc@domaincom" 
--1 excess@char??.com
--1 leadingDot.@domain.org
+1 +1 longemail_address01@mydomain.com
+2 +1 hello.world2025@subdomain.org
+3 +1 user+tag_test@verylong.com
+4 +1 big.local-part2023@my-website.org
+5 +1 alpha_numeric99@hostserver.com
+6 +1 user_name_2024@abc-company.org
+7 +1 mailservice_999@longdomain.com
+8 +1 first.last+tag@sub-host.org
+9 +1 chunk_data2025@superlong.com
+10 +1 test_example@another-sub.org
+11 +1 x.y.z_abc123@somethinglong.com
+12 +1 myaccount_sample@xyz-company.org
+13 +1 user-plus@multiple-sub.com
+14 +1 name_test_2022@mysubdomain.org
+15 +1 official_info99@somewhere.com
+16 +1 underscore.name@bigdomain.org
+17 +1 newsletter_signup@domain-long.com
+18 +1 prefix-suffix_abc@multi-org.org
+19 +1 newuser01@my-domain.com
+20 +1 userxyz+promo@long-sub.org
+21 +1 sample.mailbox@subdomain2025.com
+22 +1 deep_sub_address@multiple-level.org
+23 +1 alphanum1111@hosted-here.com
+24 +1 extra_name+2023@hosted-here.org
+25 +1 fractest12@very-very-long.com
+26 +1 team_support@very-very-long.org
+27 +1 planet.earth99@galaxy.com
+28 +1 star_cluster@galaxy.org
+29 +1 helloUniverse_777@beyond.com
+30 +1 cosmic-rays99@beyond.org
+31 +1 planet_hunter+alpha@space-company.com
+32 +1 astro_physics42@space-company.org
+33 +1 longtag999_test@subserver.com
+34 +1 sub_server_2024@subserver.org
+35 +1 data.pack_01@megahost.com
+36 +1 domain_test-user@megahost.org
+37 +1 entirefull123@domain-check.com
+38 +1 partial-email+test@domain-check.org
+39 +1 user75@mycompany.com
+40 +1 user76@mycompany.org
+41 +1 name_surname@fullname.com
+42 +1 worker_bee@fullname.org
+43 +1 build-system999@ci-server.com
+44 +1 dev_branch@ci-server.org
+45 +1 code_tester+ver1@dev-site.com
+46 +1 release_manager@dev-site.org
+47 +1 endpoint_test@api-mock.com
+48 +1 integration_test@api-mock.org
+49 +1 aggregator_user@data-agg.com
+50 +1 aggregator_user2@data-agg.org
+51 -1 sub..double@domain.com
+52 -1 abc@domaincom.org
+53 -1 my email@domain.com
+54 -1 abc@@domain.org
+55 -1 superlong-but-lacks-at-dot
+56 -1 endwith.comm
+57 -1 short@x.com
+58 -1 short@org
+59 -1 double@@something.com
+60 -1 missingat.com
+61 -1 only.alnumNoAt.com
+62 -1 extra..dots@some.org
+63 -1 endsWith_com@domain.com?
+64 -1 domain.org
+65 -1 ???@strange.com
+66 -1 user  space@space.org
+67 -1 abc@.com
+68 -1 trailingSpace@domain.com 
+69 -1 @nodomain.org
+70 -1 domaincom.org
+71 -1 me@domain.gov
+72 -1 random@@domain.com
+73 -1 lastchar-@domain.org
+74 -1 noAtSymbolHere
+75 -1 illegal@@@three.com
+76 -1 .start@domain.com
+77 -1 domainend@domain.net
+78 -1 question??@somewhere.com
+79 -1 abc#def@domain.org
+80 -1 short
+81 -1 under@score.co
+82 -1 parted.com
+83 -1 multi@lines
+84 -1 bigdomain.biz
+85 -1 ?@?.com
+86 -1 user@domain.com.orggg
+87 -1 dotend@domain.com.
+88 -1 abc@domain..com
+89 -1 missingTLD@domain
+90 -1 splitted domain@domain.com
+91 -1 more@than@one.com
+92 -1 user@@two@domain.org
+93 -1 dash-end@domain-.com
+94 -1 with[bracket@domain.com
+95 -1 abc@domain?org
+96 -1 curly{brace}@domain.org
+97 -1 weird|char@domain.com
+98 -1 leadsWithSpace @domain.org
+99 -1 semicolon;bad@domain.com
+100 -1 newLine\n@domain.org
+
