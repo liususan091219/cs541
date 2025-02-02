@@ -1,101 +1,100 @@
-id,label,sample
-101,1,"john.snow2022@winterfell.com"
-102,1,"daenerys+stormborn@targaryen.org"
-103,1,"tyrion99_lannister@casterly.com"
-104,1,"arya.stark@winter-is-coming.org"
-105,1,"robb_stark@the_north.com"
-106,1,"sansa_test@winterfell.org"
-107,1,"margaery_tyrell@highgarden.com"
-108,1,"bronn222@knight.service.org"
-109,1,"theon_greyjoy@iron_islands.com"
-110,1,"samwell+info@oldtown.org"
-111,1,"littlefinger_123@baelish.com"
-112,1,"varys-spider@redkeep.org"
-113,1,"podrick.test@bravosi.com"
-114,1,"faceless+man@no_one.org"
-115,1,"hound_dog@battles.com"
-116,1,"gregor_clegane@mountain.org"
-117,1,"khal.drogo@dothraki.com"
-118,1,"jorah.mormont@exile.org"
-119,1,"melisandre99@rhlor.com"
-120,1,"thoros_fire@rhlor.org"
-121,1,"grey_worm@unsullied.com"
-122,1,"missandei@unsullied.org"
-123,1,"ramsay_snow@bastard-land.com"
-124,1,"roose_bolton@dreadfort.org"
-125,1,"jaime.lannister@casterly.com"
-126,1,"brienne2025@tarth.org"
-127,1,"mellisandre+magic@shadow.com"
-128,1,"tormund_giant@wildlings.org"
-129,1,"gilly_north@castleblack.com"
-130,1,"edd_tollett@castleblack.org"
-131,1,"maester_aemon@oldtown.com"
-132,1,"bronze_yohn@valemen.org"
-133,1,"blackfish@riverlands.com"
-134,1,"walder_frey@twins.org"
-135,1,"brynden_tully@river.com"
-136,1,"davos+seaworth@onionknight.org"
-137,1,"stannis_baratheon@dragonstone.com"
-138,1,"renly_knight@stormlands.org"
-139,1,"mace_tyrell@reach.com"
-140,1,"oberyn_martell@dorne.org"
-141,1,"ellaria.sand@dorne.com"
-142,1,"areo_hotah@dorne.org"
-143,1,"uron_greyjoy@iron_islands.com"
-144,1,"yara_greyjoy@iron_islands.org"
-145,1,"robin_arryn@eyrie.com"
-146,1,"lysa_tully@eyrie.org"
-147,1,"sweetrobin+eyrie@skyroad.com"
-148,1,"sandor.clegane@kingslanding.org"
-149,1,"gregor2_clegane@themountain.com"
-150,1,"joffrey_baratheon@kingslanding.org"
-151,-1,"jaime@casterly."
-152,-1,"tywin@casterly.lann"
-153,-1,"arya@@got.com"
-154,-1,"sansa@.org"
-155,-1,"ramsay@bastard"
-156,-1,"short@c.com"
-157,-1,"the@.com"
-158,-1,"xyz@@abc.com"
-159,-1,"typo@domain.comm"
-160,-1,"???@domain.org"
-161,-1,"white space@abc.com"
-162,-1,"noTLD@domain"
-163,-1,"ends-with-dot@domain.com."
-164,-1,"double.dot..@domain.com"
-165,-1,"domainonly.org"
-166,-1,"@nodomain.com"
-167,-1,"my mail@domain.org"
-168,-1,"nonletters@domäin.com"
-169,-1,"abc@domain.coom"
-170,-1,"xx@yy..com"
-171,-1,"badend@domain.con1"
-172,-1,"missing@part"
-173,-1,"plus+okButNoAt.com"
-174,-1,"hash##@domain.com"
-175,-1,"two spaces@domain.com"
-176,-1,"slashend@domain.org/"
-177,-1,"@.com"
-178,-1,"(abc)@domain.org"
-179,-1,"endwith_@dom.com"
-180,-1,"multi.@@domain.org"
-181,-1,"abc@domain.biz"
-182,-1,"x@domain.co"
-183,-1,"john@domain.org?"
-184,-1,"leading-dots..@dom.com"
-185,-1,"abc@.org"
-186,-1,"some@domaincom.org"
-187,-1,"some@.com"
-188,-1,"domainorg"
-189,-1,"extra@@@symbol.com"
-190,-1,"mydomain@double..com"
-191,-1,"@.org   "
-192,-1,"super@"
-193,-1,".start@domain.com"
-194,-1,"abc@domain.org/extra"
-195,-1,"semi;colon@dom.org"
-196,-1,"angle<bracket@dom.com"
-197,-1,"abc@domain,com"
-198,-1,"trailingSpace@domain.com "
-199,-1," nodots@org"
-200,-1,"middle space@domain.com"
+1 john.snow2022@winterfell.com
+1 daenerys+stormborn@targaryen.org
+1 tyrion99_lannister@casterly.com
+1 arya.stark@winter-is-coming.org
+1 robb_stark@the_north.com
+1 sansa_test@winterfell.org
+1 margaery_tyrell@highgarden.com
+1 bronn222@knight.service.org
+1 theon_greyjoy@iron_islands.com
+1 samwell+info@oldtown.org
+1 littlefinger_123@baelish.com
+1 varys-spider@redkeep.org
+1 podrick.test@bravosi.com
+1 faceless+man@no_one.org
+1 hound_dog@battles.com
+1 gregor_clegane@mountain.org
+1 khal.drogo@dothraki.com
+1 jorah.mormont@exile.org
+1 melisandre99@rhlor.com
+1 thoros_fire@rhlor.org
+1 grey_worm@unsullied.com
+1 missandei@unsullied.org
+1 ramsay_snow@bastard-land.com
+1 roose_bolton@dreadfort.org
+1 jaime.lannister@casterly.com
+1 brienne2025@tarth.org
+1 mellisandre+magic@shadow.com
+1 tormund_giant@wildlings.org
+1 gilly_north@castleblack.com
+1 edd_tollett@castleblack.org
+1 maester_aemon@oldtown.com
+1 bronze_yohn@valemen.org
+1 blackfish@riverlands.com
+1 walder_frey@twins.org
+1 brynden_tully@river.com
+1 davos+seaworth@onionknight.org
+1 stannis_baratheon@dragonstone.com
+1 renly_knight@stormlands.org
+1 mace_tyrell@reach.com
+1 oberyn_martell@dorne.org
+1 ellaria.sand@dorne.com
+1 areo_hotah@dorne.org
+1 uron_greyjoy@iron_islands.com
+1 yara_greyjoy@iron_islands.org
+1 robin_arryn@eyrie.com
+1 lysa_tully@eyrie.org
+1 sweetrobin+eyrie@skyroad.com
+1 sandor.clegane@kingslanding.org
+1 gregor2_clegane@themountain.com
+1 joffrey_baratheon@kingslanding.org
+-1 jaime@casterly.
+-1 tywin@casterly.lann
+-1 arya@@got.com
+-1 sansa@.org
+-1 ramsay@bastard
+-1 short@c.com
+-1 the@.com
+-1 xyz@@abc.com
+-1 typo@domain.comm
+-1 ???@domain.org
+-1 white space@abc.com
+-1 noTLD@domain
+-1 ends-with-dot@domain.com.
+-1 double.dot..@domain.com
+-1 domainonly.org
+-1 @nodomain.com
+-1 my mail@domain.org
+-1 nonletters@domäin.com
+-1 abc@domain.coom
+-1 xx@yy..com
+-1 badend@domain.con1
+-1 missing@part
+-1 plus+okButNoAt.com
+-1 hash##@domain.com
+-1 two spaces@domain.com
+-1 slashend@domain.org/
+-1 @.com
+-1 (abc)@domain.org
+-1 endwith_@dom.com
+-1 multi.@@domain.org
+-1 abc@domain.biz
+-1 x@domain.co
+-1 john@domain.org?
+-1 leading-dots..@dom.com
+-1 abc@.org
+-1 some@domaincom.org
+-1 some@.com
+-1 domainorg
+-1 extra@@@symbol.com
+-1 mydomain@double..com
+-1 @.org   
+-1 super@
+-1 .start@domain.com
+-1 abc@domain.org/extra
+-1 semi;colon@dom.org
+-1 angle<bracket@dom.com
+-1 abc@domain,com
+-1 trailingSpace@domain.com 
+-1  nodots@org
+-1 middle space@domain.com
