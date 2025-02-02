@@ -52,13 +52,13 @@
 -1 domain..double@org
 -1 incompleteDomain@dom.
 -1 ???symbols???
--1  (lackOfAnything)
+-1 (lackOfAnything)
 -1 xy@z..com
 -1 no.comororg
 -1 abc@some.net
--1 trailingSpaces   @dom.org
+-1 trailingSpaces@dom.org
 -1 domain_com@domain_com.org
--1 leftover@domain.com extra
+-1 leftover@domain.comextra
 -1 doublePeriod..@dom.org
 -1 star*char@dom.com
 -1 user@some-domain.co
@@ -68,34 +68,33 @@
 -1 double@@host.com
 -1 a@b.com.org
 -1 b@sub.domain.gov
--1 space@ domain.com
--1 user@domain.com  extra
+-1 space@domain.com
+-1 user@domain.comextra
 -1 fraction!!!!@bad.org
 -1 domainIsComButNoAt.com
 -1 semicolon;@dom.org
--1 user@domain .com
+-1 user@domain.com
 -1 bigrandomjunk??.org
 -1 abc@domain
--1 user@domain.org trailing
+-1 user@domain.orgtrailing
 -1 manymany@@@signs.com
 -1 .@.
 -1 !@domain.com
 -1 noAlpha%^@dom.org
 -1 slashEnding@domain.com/
--1 underscore_name domain@org
+-1 underscore_namedomain@org
 -1 open(Paren@dom.com
 -1 closeParen)@dom.org
 -1 noExtension@dom.
 -1 single@char?.org
 -1 <tag>@dom.com
 -1 user@domain?org
--1 whitespace  
+-1 whitespace
 -1 ???@@???
 -1 me@domain.org??xx
 -1 partial@.org
--1 double  space@dom.com
+-1 doublespace@dom.com
 -1 tabInThe@	end.org
 -1 dash@-domain.com
 -1 trailingPeriod@domain.com.....
 -1 noAtNoPeriod
-

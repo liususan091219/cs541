@@ -53,13 +53,13 @@
 -1 plusNoAt+domain.com
 -1 eq=char@domain.org
 -1 multi??quest@domain.com
--1 double space@domain.org
+-1 doublespace@domain.org
 -1 trailing.dot@domain.com.
 -1 abc@.org
 -1 user@domain..org
 -1 short@.com
 -1 (abc)@dom.org
--1 user@dom com.org
+-1 user@domcom.org
 -1 fraction???@string.com
 -1 #@domain.org
 -1 leading-dots..@dom.com
@@ -69,14 +69,14 @@
 -1 user@domain.comm
 -1 endsWith.org?
 -1 angle<stuff@dom.org
--1 domain with space
+-1 domainwithspace
 -1 bracket]end@domain.com
 -1 noSuffix@domain
 -1 localPart@@dom.org
 -1 zzz@yyy
 -1 1234@5678
 -1 .dotstart@domain.org
--1 domainend@domain.comspace 
+-1 domainend@domain.comspace
 -1 tab	char@dom.com
 -1 linebreak@dom.com
 -1 name@domain..com
@@ -98,4 +98,3 @@
 -1 x@domain.c
 -1 endsWithDot@domain.org.
 -1 numericDomain@123456.org
-

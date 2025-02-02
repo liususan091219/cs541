@@ -50,7 +50,7 @@
 +1 aggregator_user2@data-agg.org
 -1 sub..double@domain.com
 -1 abc@domaincom.org
--1 my email@domain.com
+-1 myemail@domain.com
 -1 abc@@domain.org
 -1 superlong-but-lacks-at-dot
 -1 endwith.comm
@@ -63,9 +63,9 @@
 -1 endsWith_com@domain.com?
 -1 domain.org
 -1 ???@strange.com
--1 user  space@space.org
+-1 userspace@space.org
 -1 abc@.com
--1 trailingSpace@domain.com 
+-1 trailingSpace@domain.com
 -1 @nodomain.org
 -1 domaincom.org
 -1 me@domain.gov
@@ -87,7 +87,7 @@
 -1 dotend@domain.com.
 -1 abc@domain..com
 -1 missingTLD@domain
--1 splitted domain@domain.com
+-1 splitteddomain@domain.com
 -1 more@than@one.com
 -1 user@@two@domain.org
 -1 dash-end@domain-.com
@@ -95,7 +95,6 @@
 -1 abc@domain?org
 -1 curly{brace}@domain.org
 -1 weird|char@domain.com
--1 leadsWithSpace @domain.org
+-1 leadsWithSpace@domain.org
 -1 semicolon;bad@domain.com
 -1 newLine\n@domain.org
-
