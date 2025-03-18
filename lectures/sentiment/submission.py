@@ -31,7 +31,7 @@ def extractWordFeatures(x):
 ############################################################
 # Problem 3b: stochastic gradient descent
 
-def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta):
+def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta, is_2cols=False):
     '''
     Given |trainExamples| and |testExamples| (each one is a list of (x,y)
     pairs), a |featureExtractor| to apply to x, and the number of iterations to
@@ -54,44 +54,18 @@ def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta)
             return 1
     for i in range(numIters):
         for item in trainExamples:
-            x,y=item
-            phi=featureExtractor(x)
+            if is_2cols:
+                x1, x2, y = item
+                phi = featureExtractor(x1, x2)
+            else:
+                x,y=item
+                phi=featureExtractor(x)
             temp=dotProduct(weights,phi)*y
             if temp < 1:increment(weights,-eta*-y,phi)
-        print("Iteration:%s, Training error:%s, Test error:%s"%(i,evaluatePredictor(trainExamples,predict),evaluatePredictor(testExamples,predict)))
+        print("Iteration:%s, Training error:%s, Test error:%s"%(i,evaluatePredictor(trainExamples,predict, is_2cols),evaluatePredictor(testExamples,predict, is_2cols)))
     # END_YOUR_CODE
     return weights
 
-def learnPredictor_2cols(trainExamples, testExamples, featureExtractor, numIters, eta):
-    '''
-    Given |trainExamples| and |testExamples| (each one is a list of (x,y)
-    pairs), a |featureExtractor| to apply to x, and the number of iterations to
-    train |numIters|, the step size |eta|, return the weight vector (sparse
-    feature vector) learned.
-
-    You should implement stochastic gradient descent.
-
-    Note: only use the trainExamples for training!
-    You should call evaluatePredictor() on both trainExamples and testExamples
-    to see how you're doing as you learn after each iteration.
-    '''
-    weights = {}  # feature => weight
-    # BEGIN_YOUR_CODE (our solution is 12 lines of code, but don't worry if you deviate from this)
-    def predict(x):
-        phi=featureExtractor(x)
-        if dotProduct(weights,phi)<0.0:
-            return -1
-        else:
-            return 1
-    for i in range(numIters):
-        for item in trainExamples:
-            x1,x2,y=item
-            phi=featureExtractor(x1, x2)
-            temp=dotProduct(weights,phi)*y
-            if temp < 1:increment(weights,-eta*-y,phi)
-        print("Iteration:%s, Training error:%s, Test error:%s"%(i,evaluatePredictor(trainExamples,predict),evaluatePredictor(testExamples,predict)))
-    # END_YOUR_CODE
-    return weights
 
 ############################################################
 # Problem 3c: generate test case
