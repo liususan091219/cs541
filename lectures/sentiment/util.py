@@ -95,8 +95,8 @@ def outputErrorAnalysis(examples, featureExtractor, weights, path, is_2cols=Fals
             verbosePredict(featureExtractor(x), y, weights, out)
     else:
         for x1, x2, y in examples:
-            print('===', x, file=out)
-            verbosePredict(featureExtractor(x), y, weights, out)
+            print('===', x1, x2, file=out)
+            verbosePredict(featureExtractor(x1, x2), y, weights, out)
     out.close()
 
 def interactivePrompt(featureExtractor, weights):
