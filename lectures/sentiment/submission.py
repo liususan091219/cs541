@@ -46,14 +46,11 @@ def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta,
     '''
     weights = {}  # feature => weight
     # BEGIN_YOUR_CODE (our solution is 12 lines of code, but don't worry if you deviate from this)
-    def predict(x):
-        phi=featureExtractor(x)
-        if dotProduct(weights,phi)<0.0:
-            return -1
+    def predict(x1, x2):
+        if not x2:
+            phi=featureExtractor(x)
         else:
-            return 1
-    def predict_2cols(x1, x2):
-        phi=featureExtractor(x1, x2)
+            phi = featureExtractor(x1, x2)
         if dotProduct(weights,phi)<0.0:
             return -1
         else:
@@ -68,7 +65,7 @@ def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta,
                 phi=featureExtractor(x)
             temp=dotProduct(weights,phi)*y
             if temp < 1:increment(weights,-eta*-y,phi)
-        print("Iteration:%s, Training error:%s, Test error:%s"%(i,evaluatePredictor(trainExamples,predict_2cols if is_2cols else predict, is_2cols),evaluatePredictor(testExamples,predict_2cols if is_2cols else predict, is_2cols)))
+        print("Iteration:%s, Training error:%s, Test error:%s"%(i,evaluatePredictor(trainExamples,predict, is_2cols),evaluatePredictor(testExamples,predict, is_2cols)))
     # END_YOUR_CODE
     return weights
 
