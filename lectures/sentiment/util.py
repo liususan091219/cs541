@@ -46,8 +46,11 @@ def readExamples_2cols(path):
         # TODO -- change these files to utf-8.
         line = line.decode('latin-1')
         # Format of each line: <output label (+1 or -1)> <input sentence>
-        raise Exception(line.split("\t"))
-        y, x1, x2 = line.split('\t', 1)
+        #raise Exception(line.split("\t"))
+        try:
+            y, x1, x2 = line.split('\t')
+        except:
+            raise Exception(line.split("\t"))
         examples.append((x1.strip(), x2.strip(), int(y)))
     print('Read %d examples from %s' % (len(examples), path))
     return examples
