@@ -61,7 +61,7 @@ def evaluatePredictor(examples, predictor, is_2cols = False):
     error = 0
     if not is_2cols:
         for x, y in examples:
-            if predictor(x) != y:
+            if predictor(x, None) != y:
                 error += 1
     else:
         for x1, x2, y in examples:
