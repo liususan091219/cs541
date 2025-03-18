@@ -48,7 +48,7 @@ def learnPredictor(trainExamples, testExamples, featureExtractor, numIters, eta,
     # BEGIN_YOUR_CODE (our solution is 12 lines of code, but don't worry if you deviate from this)
     def predict(x1, x2):
         if not x2:
-            phi=featureExtractor(x)
+            phi=featureExtractor(x1)
         else:
             phi = featureExtractor(x1, x2)
         if dotProduct(weights,phi)<0.0:
