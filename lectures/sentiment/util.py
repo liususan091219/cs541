@@ -59,7 +59,7 @@ def evaluatePredictor(examples, predictor, is_2cols = False):
     of misclassiied examples.
     '''
     error = 0
-    if is_2cols:
+    if not is_2cols:
         for x, y in examples:
             if predictor(x) != y:
                 error += 1
