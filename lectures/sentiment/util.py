@@ -37,6 +37,20 @@ def readExamples(path):
     print('Read %d examples from %s' % (len(examples), path))
     return examples
 
+def readExamples_2cols(path):
+    '''
+    Reads a set of training examples.
+    '''
+    examples = []
+    for line in open(path, "rb"):
+        # TODO -- change these files to utf-8.
+        line = line.decode('latin-1')
+        # Format of each line: <output label (+1 or -1)> <input sentence>
+        y, x1, x2 = line.split('\t', 1)
+        examples.append((x1.strip(), x2.strip(), int(y)))
+    print('Read %d examples from %s' % (len(examples), path))
+    return examples
+
 def evaluatePredictor(examples, predictor):
     '''
     predictor: a function that takes an x and returns a predicted y.
