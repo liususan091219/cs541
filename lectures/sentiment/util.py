@@ -52,16 +52,21 @@ def readExamples_2cols(path):
     print('Read %d examples from %s' % (len(examples), path))
     return examples
 
-def evaluatePredictor(examples, predictor):
+def evaluatePredictor(examples, predictor, is_2cols = False):
     '''
     predictor: a function that takes an x and returns a predicted y.
     Given a list of examples (x, y), makes predictions based on |predict| and returns the fraction
     of misclassiied examples.
     '''
     error = 0
-    for x, y in examples:
-        if predictor(x) != y:
-            error += 1
+    if is_2cols:
+        for x, y in examples:
+            if predictor(x) != y:
+                error += 1
+    else:
+        for x1, x2, y in examples:
+            if predictor(x1, x2) != y:
+                error += 1
     return 1.0 * error / len(examples)
 
 def outputWeights(weights, path):
