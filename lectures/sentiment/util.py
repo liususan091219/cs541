@@ -87,11 +87,16 @@ def verbosePredict(phi, y, weights, out):
         print("%-30s%s * %s = %s" % (f, v, w, v * w), file=out)
     return yy
 
-def outputErrorAnalysis(examples, featureExtractor, weights, path):
+def outputErrorAnalysis(examples, featureExtractor, weights, path, is_2cols=False):
     out = open('error-analysis', 'w')
-    for x, y in examples:
-        print('===', x, file=out)
-        verbosePredict(featureExtractor(x), y, weights, out)
+    if not is_2cols:
+        for x, y in examples:
+            print('===', x, file=out)
+            verbosePredict(featureExtractor(x), y, weights, out)
+    else:
+        for x1, x2, y in examples:
+            print('===', x, file=out)
+            verbosePredict(featureExtractor(x), y, weights, out)
     out.close()
 
 def interactivePrompt(featureExtractor, weights):
