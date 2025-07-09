@@ -352,37 +352,58 @@ def get_sum_variable(csp, name, variables, maxSum):
     result = ('sum', name, 'aggregated')
     csp.add_variable(result, list(range(maxSum + 1)))
     
-    # If no variables, sum must be 0
     if len(variables) == 0:
         csp.add_unary_factor(result, lambda val: val == 0)
         return result
     
-    # Simple approach: create a chain of auxiliary variables
-    # Each aux_i represents the sum of variables[0] through variables[i]
-    for i, var in enumerate(variables):
-        aux_i = ('sum', name, i)
-        csp.add_variable(aux_i, list(range(maxSum + 1)))
+    # Build sum incrementally using auxiliary variables
+    for i in range(len(variables)):
+        aux_var = ('sum', name, i)
+        csp.add_variable(aux_var, list(range(maxSum + 1)))
         
         if i == 0:
             # First auxiliary variable equals first input variable
-            csp.add_binary_factor(var, aux_i, lambda val, aux: val == aux)
+            csp.add_binary_factor(variables[i], aux_var, lambda val, aux: val == aux)
         else:
-            # aux_i = aux_{i-1} + var
+            # aux_var = previous aux + current variable
             prev_aux = ('sum', name, i - 1)
-            # Create a simple constraint that checks if aux_i = prev_aux + var
-            def make_sum_constraint(prev_var, curr_var, aux_var):
-                def sum_constraint(prev_val, curr_val, aux_val):
-                    return prev_val + curr_val == aux_val
-                return sum_constraint
+            curr_var = variables[i]
             
-            # Add constraint using lambda that captures the current values
-            # We need to be careful with closure
-            csp.add_binary_factor(prev_aux, aux_i, 
-                lambda prev_val, aux_val: prev_val <= aux_val and aux_val <= prev_val + maxSum)
-            csp.add_binary_factor(var, aux_i, 
-                lambda var_val, aux_val: var_val <= aux_val)
+            # Create a constraint that enforces: aux_var = prev_aux + curr_var
+            # We'll use a simpler approach by creating specific constraints for each value
+            def create_sum_constraint(prev_aux_var, curr_var_var, aux_var_var):
+                # Add constraint that aux_var = prev_aux + curr_var
+                # Since we can't directly add 3-way constraints, we'll use factor tables
+                table = {}
+                for prev_val in range(maxSum + 1):
+                    table[prev_val] = {}
+                    for aux_val in range(maxSum + 1):
+                        # Check if there's a valid curr_var value
+                        curr_val = aux_val - prev_val
+                        if curr_val >= 0 and curr_val <= maxSum:
+                            table[prev_val][aux_val] = 1.0
+                        else:
+                            table[prev_val][aux_val] = 0.0
+                return table
+            
+            # Add the constraint using factor table
+            sum_table = create_sum_constraint(prev_aux, curr_var, aux_var)
+            csp.update_binary_factor_table(prev_aux, aux_var, sum_table)
+            
+            # Also add constraint between curr_var and aux_var
+            curr_table = {}
+            for curr_val in range(maxSum + 1):
+                curr_table[curr_val] = {}
+                for aux_val in range(maxSum + 1):
+                    # Check if there's a valid prev_val
+                    prev_val = aux_val - curr_val
+                    if prev_val >= 0 and prev_val <= maxSum:
+                        curr_table[curr_val][aux_val] = 1.0
+                    else:
+                        curr_table[curr_val][aux_val] = 0.0
+            csp.update_binary_factor_table(curr_var, aux_var, curr_table)
     
-    # Result equals the last auxiliary variable
+    # Link the last auxiliary variable to the result
     if len(variables) > 0:
         last_aux = ('sum', name, len(variables) - 1)
         csp.add_binary_factor(last_aux, result, lambda aux_val, result_val: aux_val == result_val)
