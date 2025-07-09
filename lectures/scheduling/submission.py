@@ -12,7 +12,10 @@ def create_chain_csp(n):
     csp = util.CSP()
     # Problem 0c
     # BEGIN_YOUR_CODE (our solution is 4 lines of code, but don't worry if you deviate from this)
-    raise Exception("Not implemented yet")
+    for var in variables:
+        csp.add_variable(var, domain)
+    for i in range(n - 1):
+        csp.add_binary_factor(variables[i], variables[i + 1], lambda x, y: x != y)
     # END_YOUR_CODE
     return csp
 
@@ -33,7 +36,15 @@ def create_nqueens_csp(n = 8):
     csp = util.CSP()
     # Problem 1a
     # BEGIN_YOUR_CODE (our solution is 7 lines of code, but don't worry if you deviate from this)
-    raise Exception("Not implemented yet")
+    # Each queen is represented by a variable named by its row (0 to n-1)
+    # The domain is the column position (0 to n-1) where the queen can be placed
+    for row in range(n):
+        csp.add_variable(row, list(range(n)))
+    
+    # Add constraints: queens cannot be in the same column, row, or diagonal
+    for i in range(n):
+        for j in range(i + 1, n):
+            csp.add_binary_factor(i, j, lambda col_i, col_j: col_i != col_j and abs(col_i - col_j) != abs(i - j))
     # END_YOUR_CODE
     return csp
 
@@ -234,7 +245,17 @@ class BacktrackingSearch():
             #       assignment, a variable, and a proposed value to this variable
             # Hint: for ties, choose the variable with lowest index in self.csp.variables
             # BEGIN_YOUR_CODE (our solution is 7 lines of code, but don't worry if you deviate from this)
-            raise Exception("Not implemented yet")
+            best_var = None
+            min_remaining_values = float('inf')
+            
+            for var in self.csp.variables:
+                if var not in assignment:
+                    remaining_values = len([val for val in self.domains[var] if self.get_delta_weight(assignment, var, val) > 0])
+                    if remaining_values < min_remaining_values:
+                        min_remaining_values = remaining_values
+                        best_var = var
+            
+            return best_var
             # END_YOUR_CODE
 
     def arc_consistency_check(self, var):
@@ -261,7 +282,46 @@ class BacktrackingSearch():
 
 
         # BEGIN_YOUR_CODE (our solution is 15 lines of code, but don't worry if you deviate from this)
-        raise Exception("Not implemented yet")
+        # Initialize a queue with all arcs from neighbors of var
+        queue = []
+        for neighbor in self.csp.get_neighbor_vars(var):
+            queue.append((neighbor, var))
+        
+        # Process arcs until queue is empty
+        while queue:
+            (xi, xj) = queue.pop(0)
+            
+            # Check if any values in xi's domain are inconsistent with xj
+            values_to_remove = []
+            for val_i in self.domains[xi]:
+                # Check if there's at least one value in xj's domain that's consistent with val_i
+                consistent = False
+                for val_j in self.domains[xj]:
+                    # Check unary constraints
+                    if self.csp.unaryFactors[xi] and self.csp.unaryFactors[xi][val_i] == 0:
+                        continue
+                    if self.csp.unaryFactors[xj] and self.csp.unaryFactors[xj][val_j] == 0:
+                        continue
+                    # Check binary constraints
+                    if xi in self.csp.binaryFactors and xj in self.csp.binaryFactors[xi]:
+                        if self.csp.binaryFactors[xi][xj][val_i][val_j] > 0:
+                            consistent = True
+                            break
+                    else:
+                        consistent = True
+                        break
+                
+                if not consistent:
+                    values_to_remove.append(val_i)
+            
+            # Remove inconsistent values
+            if values_to_remove:
+                for val in values_to_remove:
+                    self.domains[xi].remove(val)
+                # Add all arcs (xk, xi) where xk is a neighbor of xi (but not xj)
+                for xk in self.csp.get_neighbor_vars(xi):
+                    if xk != xj and (xk, xi) not in queue:
+                        queue.append((xk, xi))
         # END_YOUR_CODE
 
 
