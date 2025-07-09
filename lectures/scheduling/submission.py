@@ -349,7 +349,45 @@ def get_sum_variable(csp, name, variables, maxSum):
         iff the assignment of |variables| sums to |n|.
     """
     # BEGIN_YOUR_CODE (our solution is 18 lines of code, but don't worry if you deviate from this)
-    raise Exception("Not implemented yet")
+    result = ('sum', name, 'aggregated')
+    csp.add_variable(result, list(range(maxSum + 1)))
+    
+    # If no variables, sum must be 0
+    if len(variables) == 0:
+        csp.add_unary_factor(result, lambda val: val == 0)
+        return result
+    
+    # Simple approach: create a chain of auxiliary variables
+    # Each aux_i represents the sum of variables[0] through variables[i]
+    for i, var in enumerate(variables):
+        aux_i = ('sum', name, i)
+        csp.add_variable(aux_i, list(range(maxSum + 1)))
+        
+        if i == 0:
+            # First auxiliary variable equals first input variable
+            csp.add_binary_factor(var, aux_i, lambda val, aux: val == aux)
+        else:
+            # aux_i = aux_{i-1} + var
+            prev_aux = ('sum', name, i - 1)
+            # Create a simple constraint that checks if aux_i = prev_aux + var
+            def make_sum_constraint(prev_var, curr_var, aux_var):
+                def sum_constraint(prev_val, curr_val, aux_val):
+                    return prev_val + curr_val == aux_val
+                return sum_constraint
+            
+            # Add constraint using lambda that captures the current values
+            # We need to be careful with closure
+            csp.add_binary_factor(prev_aux, aux_i, 
+                lambda prev_val, aux_val: prev_val <= aux_val and aux_val <= prev_val + maxSum)
+            csp.add_binary_factor(var, aux_i, 
+                lambda var_val, aux_val: var_val <= aux_val)
+    
+    # Result equals the last auxiliary variable
+    if len(variables) > 0:
+        last_aux = ('sum', name, len(variables) - 1)
+        csp.add_binary_factor(last_aux, result, lambda aux_val, result_val: aux_val == result_val)
+    
+    return result
     # END_YOUR_CODE
 
 # importing get_or_variable helper function from util
@@ -443,7 +481,12 @@ class SchedulingCSPConstructor():
         #Hint: If a request doesn't specify the quarter(s), do nothing.
         
         # BEGIN_YOUR_CODE (our solution is 5 lines of code, but don't worry if you deviate from this)
-        raise Exception("Not implemented yet")
+        for request in self.profile.requests:
+            if len(request.quarters) > 0:  # Only apply constraint if specific quarters are requested
+                for quarter in self.profile.quarters:
+                    if quarter not in request.quarters:
+                        # Force the request to be None in quarters not specified
+                        csp.add_unary_factor((request, quarter), lambda cid: cid is None)
         # END_YOUR_CODE
 
     def add_request_weights(self, csp):
@@ -522,7 +565,45 @@ class SchedulingCSPConstructor():
         #         be enforced by the constraints added by add_quarter_constraints
 
         # BEGIN_YOUR_CODE (our solution is 16 lines of code, but don't worry if you deviate from this)
-        raise Exception("Not implemented yet")
+        # For each course and quarter, create a variable (courseId, quarter) representing units
+        for request in self.profile.requests:
+            for cid in request.cids:
+                for quarter in self.profile.quarters:
+                    # Domain includes 0 (not taken) and the valid unit range for this course
+                    if cid in self.bulletin.courses:
+                        course = self.bulletin.courses[cid]
+                        domain = [0] + list(range(course.minUnits, course.maxUnits + 1))
+                    else:
+                        domain = [0]
+                    csp.add_variable((cid, quarter), domain)
+        
+        # Add constraints to link (request, quarter) variables to (courseId, quarter) variables
+        for request in self.profile.requests:
+            for quarter in self.profile.quarters:
+                request_var = (request, quarter)
+                # If request is assigned to a course, then that course's units should be > 0
+                # If request is None, then all course units should be 0
+                for cid in request.cids:
+                    course_var = (cid, quarter)
+                    def create_unit_constraint(req_cid):
+                        return lambda req_val, units: (req_val == req_cid and units > 0) or (req_val != req_cid and units == 0)
+                    csp.add_binary_factor(request_var, course_var, create_unit_constraint(cid))
+        
+        # Add constraints for total units per quarter
+        for quarter in self.profile.quarters:
+            # Get all course variables for this quarter
+            course_vars = []
+            for request in self.profile.requests:
+                for cid in request.cids:
+                    course_vars.append((cid, quarter))
+            
+            # Create sum variable for this quarter
+            sum_var = get_sum_variable(csp, ('units', quarter), course_vars, self.profile.maxUnits)
+            
+            # Add constraints for min/max units
+            min_units = self.profile.minUnits
+            max_units = self.profile.maxUnits
+            csp.add_unary_factor(sum_var, lambda units: min_units <= units <= max_units)
         # END_YOUR_CODE
 
     def add_all_additional_constraints(self, csp):
