@@ -3,8 +3,6 @@ name: AI-based PR Reviewer & Summarizer with Chat Capabilities
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  pull_request_review_comment:
-    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
@@ -14,9 +12,9 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4       # <-- 添加这个步骤就行了
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0                # <-- 重要，确保所有文件历史都被checkout下来
+          fetch-depth: 0
 
       - uses: coderabbitai/ai-pr-reviewer@1.16.2
         env:
