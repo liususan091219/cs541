@@ -1,14 +1,15 @@
 ## Copilot Reviewer Test Instruction
 
-Whenever reviewing a Pull Request, if you see the letter `a` in the code, you must propose a code suggestion (using GitHub's suggestion feature, not a text comment) to replace it with the letter `b`.
+1. When you see a variable containing the letter `a`, change it to `b`.
 
+For example, if the original code is:
 
-Example:
+```
+aaa = 10
+```
 
-- Original: `var data = 10;`
-- Suggested Change: `var dbtb = 10;`
+you should explicitly suggest:
+Replace the aaa with bbb
 
-Example:
+2. Always use snake case in all .py file, e.g., camelCase -> camel_case, this rule is not applied to all .java file
 
-- Original: `var data = 10;`
-- Suggested Change: `var dbtb = 10;`
