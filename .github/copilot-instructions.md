@@ -13,3 +13,4 @@ Replace the aaa with bbb
 
 2. Always use snake case in all .py file, e.g., camelCase -> camel_case, this rule is not applied to all .java file
 
+3. Always point out when you see unecessary changes
